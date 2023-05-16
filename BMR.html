@@ -1,0 +1,88 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="radio"],
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+
+<form id="bmrForm">
+  <h2>BMR 計算</h2>
+  <label>
+    性別:
+    <input type="radio" name="gender" value="male" checked> 男性
+    <input type="radio" name="gender" value="female"> 女性
+  </label>
+  <label>
+    年齡:
+    <input type="number" name="age" required>
+  </label>
+  <label>
+    身高 (公分):
+    <input type="number" name="height" required>
+  </label>
+  <label>
+    體重 (公斤):
+    <input type="number" name="weight" required>
+  </label>
+  <input type="submit" value="計算">
+</form>
+
+<script>
+  document.getElementById("bmrForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // 阻止表單提交的預設行為
+    calculateBMR();
+  });
+
+  function calculateBMR() {
+    var gender = document.querySelector('input[name="gender"]:checked').value;
+    var age = parseInt(document.getElementsByName("age")[0].value);
+    var height = parseInt(document.getElementsByName("height")[0].value);
+    var weight = parseInt(document.getElementsByName("weight")[0].value);
+
+    var bmr;
+    if (gender === "male") {
+      bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else {
+      bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    }
+
+    alert("您的 BMR（基礎代謝率）為：" + bmr.toFixed(2) + " 卡路里");
+  }
+</script>
