@@ -28,6 +28,17 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("#text").toggle("slideUp");
+    });
+    $("#hide").click(function(){
+        $("#text").hide("slideUp");
+    });
+});
+</script>
   <!-- =======================================================
   * Template Name: Gp
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -73,9 +84,6 @@
           <h2>by 一個愛追劇的小透明</h2>
         </div>
       </div>
-
-      
-
     </div>
   </section><!-- End Hero -->
 
@@ -95,14 +103,24 @@
               本網站為個人追劇心得分享平台，內容將包含:
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> 陸劇推薦(包含古裝/仙俠/現代類) </li>
+              <li><i class="ri-check-double-line"></i> 陸劇推薦 & 角色經典語錄 </li>
               <li><i class="ri-check-double-line"></i> 演員推薦</li>
-              <li><i class="ri-check-double-line"></i> 心得交流</li>
+              <li><i class="ri-check-double-line"></i> 心得交流 (表單填寫)</li>
             </ul>
+            <h5 id="show">
+              ! 閱讀前的注意事項 !
+            </h5>
+            <h6 id="text">
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+              1. 個人追劇偏好為陸劇的古裝/仙俠/現代愛情，因此大多會從這幾類推薦
             </p>
+            <p>  
+              2. 陸劇推薦內容含有對該電視劇的基本介紹與個人心得，其中心得會提出該劇的優缺點並給予評分。不過這只代表個人的主觀感受，僅供參考
+            </p>
+            <p>
+              3. 若有其他想法想交流，或是有其他想看的電視劇心得，都歡迎在「回饋」的地方填寫表單~
+            </p>  
+          </h6>
           </div>
         </div>
 
@@ -130,7 +148,6 @@
       </div>
     </section><!-- End Clients Section -->
 
-
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
@@ -150,7 +167,7 @@
             </ul>
           </div>
         </div>
-
+      </div>
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
@@ -160,7 +177,7 @@
                 <h4>周生如故</h4>
                 <p>古裝類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="周生如故"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -174,7 +191,7 @@
                 <h4>微微一笑很傾城</h4>
                 <p>現代類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="微微一笑很傾城"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details1.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -188,7 +205,7 @@
                 <h4>步步驚心</h4>
                 <p>古裝類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="步步驚心"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details2.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -202,7 +219,7 @@
                 <h4>花千骨</h4>
                 <p>仙俠類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="花千骨"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details3.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -216,7 +233,7 @@
                 <h4>明天也想見到你</h4>
                 <p>現代類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="明天也想見到你"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details4.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -230,7 +247,7 @@
                 <h4>卿卿日常</h4>
                 <p>古裝類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="卿卿日常"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details5.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -244,7 +261,7 @@
                 <h4>三生三世枕上書</h4>
                 <p>仙俠類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="三生三世枕上書"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details6.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -258,7 +275,7 @@
                 <h4>琉璃</h4>
                 <p>仙俠類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="琉璃"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details7.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -272,16 +289,13 @@
                 <h4>一閃一閃亮星星</h4>
                 <p>現代類</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="一閃一閃亮星星"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details8.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
-
-      </div>
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Counts Section ======= -->
@@ -333,14 +347,13 @@
           </div>
         </div>
 
-      </div>
     </section><!-- End Counts Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
       <div class="container" data-aos="zoom-in">
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="10">
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
@@ -508,7 +521,7 @@
 
         <div class="section-title">
           <h2>回饋</h2>
-          <p>任何想法或建議</p>
+          <p>歡迎提供任何想法或建議</p>
         </div>
 
         <div>
