@@ -29,16 +29,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("#show").click(function(){
-        $("#text").toggle("slideUp");
-    });
-    $("#hide").click(function(){
-        $("#text").hide("slideUp");
-    });
-});
-</script>
+
   <!-- =======================================================
   * Template Name: Gp
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -75,7 +66,7 @@ $(document).ready(function(){
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
+      <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container" data-aos="fade-up">
 
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
@@ -103,23 +94,26 @@ $(document).ready(function(){
               本網站為個人追劇心得分享平台，內容將包含:
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> 陸劇推薦 & 角色經典語錄 </li>
+              <li><i class="ri-check-double-line"></i> 陸劇心得 (須輸入密碼: xuann)</li>
+              <li><i class="ri-check-double-line"></i> 角色經典語錄</li>
               <li><i class="ri-check-double-line"></i> 演員推薦</li>
-              <li><i class="ri-check-double-line"></i> 心得交流 (表單填寫)</li>
             </ul>
-            <h5 id="show">
-              ! 閱讀前的注意事項 !
+            <h5>
+              ! 閱讀前的注意事項 ! 
             </h5>
-            <h6 id="text">
+            <h6>
             <p>
-              1. 個人追劇偏好為陸劇的古裝/仙俠/現代愛情，因此大多會從這幾類推薦
+              1. <span class="text-primary">陸劇心得部分須輸入密碼才可觀看，刷新頁面即可輸入密碼</span>
             </p>
             <p>  
-              2. 陸劇推薦內容含有對該電視劇的基本介紹與個人心得，其中心得會提出該劇的優缺點並給予評分。不過這只代表個人的主觀感受，僅供參考
+              2. 個人追劇偏好為陸劇的古裝/仙俠/現代愛情，因此大多會從這幾類推薦
             </p>
             <p>
-              3. 若有其他想法想交流，或是有其他想看的電視劇心得，都歡迎在「回饋」的地方填寫表單~
-            </p>  
+              3. 陸劇推薦內容含有對該電視劇的基本介紹與個人心得，其中心得會提出該劇的優缺點並給予評分。不過這<span class="text-danger"> 只代表個人的主觀感受，僅供參考</span>
+            </p>
+            <p>
+              4. 若有其他想法想交流，或是有其他想看的電視劇心得，都歡迎在「回饋」的地方填寫表單~
+            </p>    
           </h6>
           </div>
         </div>
@@ -127,26 +121,25 @@ $(document).ready(function(){
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Clients Section -->
+<script>
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("#text").toggle("fadeIn");
+    });
+    $("#hide").click(function(){
+        $("#text").hide();
+    });
+});
+</script>
+<script>
+    $(document).ready(function() {
+      var id = prompt("請輸入會員帳號");
+      if (id=='xuann')
+        $('#portfolio').show();
+      else
+        $('#portfolio').hide();
+    });
+</script>
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
@@ -154,7 +147,7 @@ $(document).ready(function(){
 
         <div class="section-title">
           <h2>文章</h2>
-          <p>陸劇推薦(點選圖片連結看詳細介紹)</p>
+          <p id="show">陸劇心得(點選圖片連結看詳細介紹)</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -168,7 +161,7 @@ $(document).ready(function(){
           </div>
         </div>
       </div>
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <div id="text" class="row portfolio-container" data-aos-delay="200">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
@@ -303,51 +296,55 @@ $(document).ready(function(){
       <div class="container" data-aos="fade-up">
 
         <div class="row no-gutters">
-          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
-          <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+          
+          <div class="col-xl-12 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
             <div class="content d-flex flex-column justify-content-center">
-              <h3>Voluptatem dignissimos provident quasi</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
-              <div class="row">
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-emoji-smile"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="2" class="purecounter"></span>
-                    <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-journal-richtext"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2" class="purecounter"></span>
-                    <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-clock"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="4" class="purecounter"></span>
-                    <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="bi bi-award"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4" class="purecounter"></span>
-                    <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et nemo pad der</p>
-                  </div>
-                </div>
+              <h3>其他陸劇評分</h3>
+                <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        🌕🌕🌕🌕🌕／5  必看!😍
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        《如此可愛的我們》《致我們暖暖的小時光》《贅婿》《后宮甄嬛傳》《如懿傳》
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        🌕🌕🌕🌕🌑／4  推推👍
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        《我只喜歡你》《對我而言危險的他》《三生三世十里桃花》《蒼蘭訣》《虛顏》《知否知否因是綠肥紅瘦》
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        🌕🌕🌕🌑🌑／3  不推
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>!依個人喜好可能感受不同!</strong> 《新流星花園》《夏至未至》《極光之戀》《歸還世界給你》
+      </div>
+    </div>
+  </div>
+</div>
               </div>
             </div><!-- End .content-->
           </div>
         </div>
 
-    </section><!-- End Counts Section -->
+    </section>
+    <!-- End Counts Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -443,10 +440,8 @@ $(document).ready(function(){
               <div class="member-img">
                 <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://m.weibo.cn/u/1259110474?t=0&luicode=10000011&lfid=100103type%3D1%26q%3D%E8%B6%99%E9%BA%97%E7%A9%8E"><i class="bi bi-sina-weibo"></i></a>
+                  <a href="https://www.instagram.com/zlyzhao/"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -461,11 +456,8 @@ $(document).ready(function(){
               <div class="member-img">
                 <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+                  <a href="https://m.weibo.cn/u/3800468188?t=0&luicode=10000011&lfid=100103type%3D1%26q%3D%E4%BB%BB%E5%98%89%E5%80%AB"><i class="bi bi-sina-weibo"></i></a>
+                  <a href="https://www.instagram.com/rj_leader_allen/"><i class="bi bi-instagram"></i></a>                </div>
               </div>
               <div class="member-info">
                 <h4>任嘉倫</h4>
@@ -479,10 +471,8 @@ $(document).ready(function(){
               <div class="member-img">
                 <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://m.weibo.cn/u/2616380702?t=0&luicode=10000011&lfid=100103type%3D1%26q%3D%E7%99%BD%E9%B9%BF"><i class="bi bi-sina-weibo"></i></a>
+                  <a href="https://www.instagram.com/bailu_923/"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -497,10 +487,8 @@ $(document).ready(function(){
               <div class="member-img">
                 <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://m.weibo.cn/u/1669879400?t=0&luicode=10000011&lfid=100103type%3D1%26q%3D%E8%BF%AA%E9%BA%97%E7%86%B1%E5%B7%B4"><i class="bi bi-sina-weibo"></i></a>
+                  <a href="https://www.instagram.com/dilrabaxx63/"><i class="bi bi-instagram"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -534,20 +522,20 @@ $(document).ready(function(){
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>位置:</h4>
+                <p>臺灣</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
+                <h4>電子郵件:</h4>
+                <p>yeses9062@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h4>電話:</h4>
+                <p>09xxxxxxxx</p>
               </div>
 
             </div>
@@ -556,28 +544,37 @@ $(document).ready(function(){
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form" onsubmit="return confirmSubmit();">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="名字" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="電子郵件" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="主旨 (網站相關/心得交流/想看的陸劇心得/其他)" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="內容  例如: 對本網站內容的建議或疑問/陸劇心得交流/其他想看的陸劇心得 (請注意禮節)" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">您的表單已送出，謝謝!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">提交表單</button></div>
             </form>
+
+            <script>
+              function confirmSubmit() {
+                if (confirm('確定提交表單？')) {
+                  document.querySelector('.sent-message').style.display = 'block';
+                  return true; // 允许表单提交
+                }
+                return false; // 阻止表单提交
+              }
+            </script>
+
 
           </div>
 
