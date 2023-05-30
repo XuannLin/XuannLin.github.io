@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>陸劇心得分享平台- Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -296,11 +295,34 @@ $(document).ready(function(){
       <div class="container" data-aos="fade-up">
 
         <div class="row no-gutters">
+          <div class="w-100 p-3">
           
-          <div class="col-xl-12 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
             <div class="content d-flex flex-column justify-content-center">
               <h3>其他陸劇評分</h3>
                 <div class="accordion" id="accordionExample">
+  <style>
+  /* 手風琴項目的樣式 */
+  .accordion-item {
+    background-color: ##FFBA00;
+    border: 1px solid #FFBA00; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  /* 手風琴標題的樣式 */
+  .accordion-header {
+    background-color: ##FFBA00;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  
+</style>
+
+
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -544,37 +566,7 @@ $(document).ready(function(){
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form" onsubmit="return confirmSubmit();">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="名字" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="電子郵件" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="主旨 (網站相關/心得交流/想看的陸劇心得/其他)" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="內容  例如: 對本網站內容的建議或疑問/陸劇心得交流/其他想看的陸劇心得 (請注意禮節)" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="sent-message">您的表單已送出，謝謝!</div>
-              </div>
-              <div class="text-center"><button type="submit">提交表單</button></div>
-            </form>
-
-            <script>
-              function confirmSubmit() {
-                if (confirm('確定提交表單？')) {
-                  document.querySelector('.sent-message').style.display = 'block';
-                  return true; // 允许表单提交
-                }
-                return false; // 阻止表单提交
-              }
-            </script>
-
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScxiC2jFN1ZNGpNWSEbviTLmjBuy7hq5uQzmksgwdzN4lusOQ/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
 
           </div>
 
